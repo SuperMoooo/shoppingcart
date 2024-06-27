@@ -29,7 +29,7 @@ export default function ItemsSection() {
         { name: 'item12', price: 93, img: braceletW },
     ];
     return (
-        <article className="grid grid-cols-4 gap-8 w-full h-full mt-4">
+        <article className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-8 w-full h-full mt-4">
             {items.map((item, index) => (
                 <ItemCard
                     key={index + item}

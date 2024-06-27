@@ -12,7 +12,7 @@ export default function Navbar() {
         setCartOpen(!cartOpen);
     };
     return (
-        <nav className="flex flex-row justify-between items-center py-4 px-40">
+        <nav className="flex flex-row justify-between items-center py-4 px-10 md:px-40">
             <h1 className="text-2xl">Shopping Cart with Redux</h1>
             <div
                 onClick={handleOpenCart}
@@ -33,7 +33,7 @@ export default function Navbar() {
             </div>
             <article
                 className={` top-0 ${
-                    cartOpen ? 'right-0' : 'right-[-50%]'
+                    cartOpen ? 'right-0' : 'right-[-150%]'
                 } w-96 bg-black h-full p-6 fixed transition-all duration-500 z-50`}
             >
                 <section className="relative flex items-center flex-col justify-start h-full">
@@ -57,6 +57,7 @@ export default function Navbar() {
                     <div className="flex flex-col justify-start items-center w-full h-fulf space-y-5 mt-10">
                         {cartItems.map((item) => (
                             <CartItemCard
+                                key={item.name}
                                 itemName={item.name}
                                 itemPrice={item.price}
                                 itemImg={item.img}
